@@ -1,0 +1,11 @@
+.page {
+  position: relative;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 1rem 4rem;
+}

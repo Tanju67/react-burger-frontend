@@ -16,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding: 4rem;
+  padding: 8rem 4rem;
 }
 .text {
   flex: 1;
@@ -43,7 +43,7 @@
 }
 
 .img img {
-  height: 90vh;
+  height: 80vh;
 }
 
 .styleImage {

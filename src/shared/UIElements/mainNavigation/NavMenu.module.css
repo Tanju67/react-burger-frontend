@@ -1,0 +1,15 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.menu li a {
+  color: #ccc;
+  transition: all 0.3s;
+}
+
+.menu li a:hover {
+  color: #fff;
+}
