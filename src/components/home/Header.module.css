@@ -1,0 +1,61 @@
+.section {
+  height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(
+      to right,
+      rgba(255, 19, 96, 0.4),
+      rgba(255, 19, 96, 0.2)
+    ),
+    url("../../assets/pexels-edwardeyer-687824.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem;
+}
+.text {
+  flex: 1;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start; */
+}
+.text h1 {
+  font-size: var(--size-main-title);
+  color: #fff;
+}
+.text p {
+  font-size: 2.5rem;
+  color: #bbb;
+}
+.img {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.img img {
+  height: 90vh;
+}
+
+.styleImage {
+  position: absolute;
+  bottom: 0;
+}
+
+.styleImage img {
+  width: 100%;
+}
+
+.whiteImg {
+  position: absolute;
+  bottom: 0;
+}
