@@ -1,0 +1,29 @@
+.btn {
+  border: none;
+  color: #fff;
+  background-color: var(--clr-primary);
+  cursor: pointer;
+  transition: all 0.3s;
+
+  font-weight: bold;
+}
+
+.btn_sm {
+  padding: 0.5rem 1rem;
+}
+
+.btn_md {
+  padding: 1rem 5rem;
+}
+
+.btn_large {
+  padding: 1.4rem 8rem;
+}
+
+.rounded {
+  border-radius: 25px;
+}
+
+.btn:hover {
+  background-color: var(--clr-primary-shade);
+}
