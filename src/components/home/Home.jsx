@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./Home.module.css";
 import Header from "./Header";
 import MainNavigation from "../../shared/UIElements/mainNavigation/MainNavigation";
+import About from "./About";
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
         <MainNavigation />
       </div>
       <Header />
+      <About />
     </div>
   );
 }

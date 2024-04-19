@@ -1,0 +1,16 @@
+.section {
+  padding: 8rem 4rem;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  gap: 1rem;
+}
+
+.titleLogo {
+  color: var(--clr-primary);
+  font-size: 3rem;
+}
