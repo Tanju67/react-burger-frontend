@@ -1,3 +1,5 @@
+@import "https://unpkg.com/leaflet@1.9.3/dist/leaflet.css";
+
 @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
 
 :root {
@@ -42,7 +44,7 @@ a {
 }
 .container {
   max-width: 124rem;
-  padding: 4rem 1rem;
+  padding: 4rem 1rem 0 1rem;
   margin: 0 auto;
 }
 
