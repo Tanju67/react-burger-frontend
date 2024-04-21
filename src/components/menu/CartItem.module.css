@@ -1,0 +1,20 @@
+.item {
+  border-bottom: 1px solid var(--clr-primary);
+  padding: 1.5rem 0;
+}
+
+.item p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1.2;
+}
+
+.clsBtn {
+  font-size: 3rem;
+  color: var(--clr-primary);
+}
+
+.item strong {
+  font-size: 2rem;
+}
