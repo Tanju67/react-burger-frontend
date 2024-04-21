@@ -1,10 +1,19 @@
 .page {
   background-color: #ddd;
   min-height: 100vh;
-  padding: 1rem;
+  position: relative;
 }
 
 .content {
-  display: flex;
+  /* display: flex; */
   padding: 1rem;
+  position: relative;
+}
+
+.nav {
+  background-color: #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 1rem 0 1rem;
 }

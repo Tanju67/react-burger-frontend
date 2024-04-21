@@ -1,9 +1,11 @@
 .cartSection {
-  flex: 1;
-  align-self: flex-start;
+  position: fixed;
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  top: 8rem;
+  left: 60%;
+  right: 1rem;
 }
 
 .cart {

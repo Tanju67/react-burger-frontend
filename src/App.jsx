@@ -4,6 +4,7 @@ import RootLayout from "./page/RootLayout";
 import HomePage from "./page/HomePage";
 import MenuPage from "./page/MenuPage";
 import ErrorPage from "./page/ErrorPage";
+import MenuDetailPage from "./page/MenuDetailPage";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/menu",
-        element: <MenuPage />,
+        children: [
+          {
+            index: true,
+            element: <MenuPage />,
+          },
+          {
+            path: ":id",
+            element: <MenuDetailPage />,
+          },
+        ],
       },
     ],
   },

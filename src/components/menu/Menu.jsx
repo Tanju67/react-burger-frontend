@@ -8,12 +8,14 @@ import Footer from "../../shared/UIElements/footer/Footer";
 function Menu() {
   return (
     <section className={styles.page}>
-      <MenuNav title={"All Menus"} />
+      <div className={styles.nav}>
+        <MenuNav title={"All Menus"} />
+      </div>
+
       <div className={styles.content}>
         <MenuList />
         <MenuCart />
       </div>
-      <Footer />
     </section>
   );
 }

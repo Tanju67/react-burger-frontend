@@ -7,7 +7,7 @@ function ListItem({ item }) {
   return (
     <Card className={styles.item}>
       <li>
-        <Link>
+        <Link to={`${item.id}`}>
           <img src={item.image} alt={item.title} />
         </Link>
         <span>{item.title}</span>

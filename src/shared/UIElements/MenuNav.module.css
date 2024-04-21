@@ -2,7 +2,9 @@
   background-color: var(--clr-primary);
   color: #fff;
   border-radius: 1rem;
-  position: relative;
+  position: sticky;
+  top: 1rem;
+  z-index: 100;
 }
 
 .nav a {
