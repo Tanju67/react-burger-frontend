@@ -3,12 +3,22 @@ import styles from "./MainNavigation.module.css";
 import Logo from "../Logo";
 import NavMenu from "./NavMenu";
 
-function MainNavigation() {
+function MainNavigation({ main = true }) {
   return (
-    <nav className={styles.nav}>
-      <Logo />
-      <NavMenu />
-    </nav>
+    <>
+      {main && (
+        <nav className={styles.nav}>
+          <Logo />
+          <NavMenu />
+        </nav>
+      )}
+      {!main && (
+        <nav className={styles.navSub}>
+          <Logo />
+          <NavMenu />
+        </nav>
+      )}
+    </>
   );
 }
 

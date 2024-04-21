@@ -3,11 +3,13 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./page/RootLayout";
 import HomePage from "./page/HomePage";
 import MenuPage from "./page/MenuPage";
+import ErrorPage from "./page/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         index: true,

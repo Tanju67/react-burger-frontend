@@ -1,0 +1,7 @@
+.error {
+  text-align: center;
+  background-color: var(--clr-primary);
+  height: 100vh;
+  color: #fff;
+  padding-top: 2rem;
+}
