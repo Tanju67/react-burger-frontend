@@ -7,7 +7,7 @@ function NavMenu() {
   return (
     <ul className={styles.menu}>
       <li>
-        <NavLink>Menu</NavLink>
+        <NavLink to={"menu"}>Menu</NavLink>
       </li>
       <li>
         <NavLink>My Order</NavLink>

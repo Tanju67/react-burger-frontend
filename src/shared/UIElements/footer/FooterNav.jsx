@@ -14,7 +14,7 @@ function FooterNav() {
         </li>
         <li>|</li>
         <li>
-          <Link>Menu</Link>
+          <Link to={"menu"}>Menu</Link>
         </li>
         <li>|</li>
         <li>

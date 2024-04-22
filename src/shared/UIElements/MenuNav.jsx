@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function MenuNav({ title }) {
   return (
     <nav className={styles.nav}>
-      <Link>
+      <Link to={".."}>
         <IoArrowBackOutline />
       </Link>
       <h2>{title}</h2>

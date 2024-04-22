@@ -1,0 +1,20 @@
+.itemCard {
+  background-color: #fff;
+  margin-bottom: 1rem;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemCard span {
+  border: 2px solid var(--clr-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  margin-top: 1rem;
+  display: inline-block;
+  align-self: self-end;
+}
+
+.item a {
+  color: #000;
+}
