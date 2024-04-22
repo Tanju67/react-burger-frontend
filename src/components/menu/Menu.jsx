@@ -1,22 +1,12 @@
 import React from "react";
-import styles from "./Menu.module.css";
-import MenuNav from "../../shared/UIElements/MenuNav";
 import MenuList from "./MenuList";
-import MenuCart from "./MenuCart";
-import Footer from "../../shared/UIElements/footer/Footer";
+import MenuLayout from "../../shared/UIElements/MenuLayout";
 
 function Menu() {
   return (
-    <section className={styles.page}>
-      <div className={styles.nav}>
-        <MenuNav title={"All Menus"} />
-      </div>
-
-      <div className={styles.content}>
-        <MenuList />
-        <MenuCart />
-      </div>
-    </section>
+    <MenuLayout title={"All Menus"}>
+      <MenuList />
+    </MenuLayout>
   );
 }
 
