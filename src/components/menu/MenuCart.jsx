@@ -3,26 +3,34 @@ import styles from "./MenuCart.module.css";
 import Card from "../../shared/UIElements/Card";
 import CartItem from "./CartItem";
 import Button from "../../shared/UIElements/Button";
+import { useSelector } from "react-redux";
 
-const cart = {
-  totalPrice: 31,
-  item: [
-    {
-      title: "burger",
-      quantity: 2,
-      price: 10.5,
-      extras: { basilikum: 0.5, cheddar: 0.5 },
-    },
-    {
-      title: "chicken",
-      quantity: 1,
-      price: 8,
-      extras: { basilikum: 0.5, cheddar: 0.5 },
-    },
-  ],
-};
+// const cart = {
+//   totalPrice: 31,
+//   item: [
+//     {
+//       title: "burger",
+//       quantity: 2,
+//       price: 10.5,
+//       extras: [
+//         { title: "basilikum", price: 0.5, id: "p1" },
+//         { title: "cheddar", price: 0.5, id: "p2" },
+//       ],
+//     },
+//     {
+//       title: "chicken",
+//       quantity: 1,
+//       price: 8,
+//       extras: [
+//         { title: "basilikum", price: 0.5, id: "p1" },
+//         { title: "cheddar", price: 0.5, id: "p2" },
+//       ],
+//     },
+//   ],
+// };
 
 function MenuCart() {
+  const cart = useSelector((state) => state.cart);
   return (
     <div className={styles.cartSection}>
       <Card className={styles.cart}>

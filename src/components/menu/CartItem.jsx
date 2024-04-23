@@ -1,25 +1,19 @@
 import React from "react";
 import styles from "./CartItem.module.css";
+import { getExtras } from "../../shared/utils/helper";
 
 function CartItem({ item }) {
-  const extras = Object.keys(item.extras).reduce((cur, sum) => {
-    return cur + " + " + sum;
-  });
-  const extrasPrice = Object.values(item.extras).reduce((cur, sum) => {
-    return cur + sum;
-  }, 0);
+  const { extrasTitle, extrasPrice } = getExtras(item.extras);
 
   const itemPrice = item.price * item.quantity + extrasPrice;
   return (
     <div className={styles.item}>
       <p className={styles.title}>
-        <strong>
-          {item.quantity} x {item.title}
-        </strong>
+        <strong>{item.title}</strong>
         <span className={styles.clsBtn}>&times;</span>
       </p>
       <p className={styles.price}>
-        <span>{extras}</span>
+        {extrasTitle}
         <span>${itemPrice.toFixed(2)}</span>
       </p>
     </div>

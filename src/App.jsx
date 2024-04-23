@@ -5,6 +5,7 @@ import HomePage from "./page/HomePage";
 import MenuPage from "./page/MenuPage";
 import ErrorPage from "./page/ErrorPage";
 import MenuDetailPage from "./page/MenuDetailPage";
+import OrderPage from "./page/OrderPage";
 
 const router = createBrowserRouter([
   {
@@ -25,7 +26,16 @@ const router = createBrowserRouter([
           },
           {
             path: ":id",
-            element: <MenuDetailPage />,
+            children: [
+              {
+                index: true,
+                element: <MenuDetailPage />,
+              },
+              {
+                path: "order/:id",
+                element: <OrderPage />,
+              },
+            ],
           },
         ],
       },

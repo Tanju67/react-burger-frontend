@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 function ProductItem({ item }) {
   return (
     <li className={styles.item}>
-      <Link to={item.id}>
+      <Link to={`order/${item.id}`}>
         <Card className={styles.itemCard}>
           <h2>{item.title}</h2>
           <p>{item.description}</p>

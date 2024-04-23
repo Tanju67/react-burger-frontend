@@ -1,0 +1,19 @@
+.content {
+  padding-right: 1rem;
+}
+
+.contentCard {
+  background-color: #fff;
+  width: 60%;
+  padding: 2rem 1rem;
+}
+
+.contentCard p {
+  margin-bottom: 2rem;
+}
+
+.orderBtn {
+  width: 100%;
+  margin-top: 3rem;
+  border-radius: 1rem;
+}
