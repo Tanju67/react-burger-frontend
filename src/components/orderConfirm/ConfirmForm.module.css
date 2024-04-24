@@ -1,0 +1,19 @@
+.content {
+  width: 60%;
+  padding-right: 1rem;
+}
+
+.content form {
+  border-radius: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+}
+
+.content form h2 {
+  margin-bottom: 2rem;
+}
+
+.orderBtn {
+  width: 100%;
+  margin: 2rem 0;
+}

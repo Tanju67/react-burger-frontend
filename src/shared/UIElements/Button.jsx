@@ -2,7 +2,16 @@
 import { Link } from "react-router-dom";
 import styles from "./Button.module.css";
 
-function Button({ children, className, type, size, to, rounded, onClick }) {
+function Button({
+  children,
+  className,
+  type,
+  size,
+  to,
+  rounded,
+  onClick,
+  disabled,
+}) {
   if (to) {
     return (
       <Link
@@ -22,6 +31,7 @@ function Button({ children, className, type, size, to, rounded, onClick }) {
   return (
     <button
       onClick={onClick}
+      disabled={disabled}
       type={type}
       className={`${styles.btn} ${className} ${
         size === "sm" ? styles.btn_sm : ""

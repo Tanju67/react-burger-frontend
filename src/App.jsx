@@ -6,6 +6,7 @@ import MenuPage from "./page/MenuPage";
 import ErrorPage from "./page/ErrorPage";
 import MenuDetailPage from "./page/MenuDetailPage";
 import OrderPage from "./page/OrderPage";
+import OrderConfirmPage from "./page/OrderConfirmPage";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
                 element: <OrderPage />,
               },
             ],
+          },
+          {
+            path: "confirm",
+            element: <OrderConfirmPage />,
           },
         ],
       },

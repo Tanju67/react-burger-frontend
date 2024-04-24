@@ -4,6 +4,7 @@ import Card from "../../shared/UIElements/Card";
 import CartItem from "./CartItem";
 import Button from "../../shared/UIElements/Button";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
 // const cart = {
 //   totalPrice: 31,
@@ -29,8 +30,12 @@ import { useSelector } from "react-redux";
 //   ],
 // };
 
-function MenuCart() {
+function MenuCart({ orderBtn = true }) {
   const cart = useSelector((state) => state.cart);
+  const navigate = useNavigate();
+  const clickHandler = () => {
+    navigate("/menu/confirm");
+  };
   return (
     <div className={styles.cartSection}>
       <Card className={styles.cart}>
@@ -46,9 +51,16 @@ function MenuCart() {
         )}
         {cart.item.length === 0 && <p>No product in your cart.</p>}
       </Card>
-      <Button rounded={true} size={"md"}>
-        Order Now
-      </Button>
+      {orderBtn && (
+        <Button
+          onClick={clickHandler}
+          rounded={true}
+          size={"md"}
+          disabled={cart.item.length === 0}
+        >
+          Go to Order Now
+        </Button>
+      )}
     </div>
   );
 }

@@ -3,7 +3,7 @@ import styles from "./MenuLayout.module.css";
 import MenuNav from "./MenuNav";
 import MenuCart from "../../components/menu/MenuCart";
 
-function MenuLayout({ children, title }) {
+function MenuLayout({ children, title, orderBtn = true }) {
   return (
     <section className={styles.page}>
       <div className={styles.nav}>
@@ -12,7 +12,7 @@ function MenuLayout({ children, title }) {
 
       <div className={styles.content}>
         {children}
-        <MenuCart />
+        <MenuCart orderBtn={orderBtn} />
       </div>
     </section>
   );
