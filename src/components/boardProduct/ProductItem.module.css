@@ -1,0 +1,30 @@
+.item {
+  width: 24%;
+  color: var(--clr-primary-shade);
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s;
+  border: 5px solid transparent;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(242, 109, 124, 0.75);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+
+.item:hover {
+  scale: 1.02;
+  border: 5px solid rgba(242, 109, 124, 0.75);
+}

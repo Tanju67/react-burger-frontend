@@ -1,0 +1,42 @@
+.sidebar {
+  flex: 1;
+  height: 85vh;
+  background-color: var(--clr-primary);
+  border-radius: 0.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+}
+
+.boardLogo {
+  color: #fff;
+  font-size: 5rem;
+}
+
+.sidebar ul {
+  /* align-self: flex-start; */
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sidebar ul li:hover a {
+  background-color: #fff;
+  color: var(--clr-primary);
+}
+
+.sidebar ul li a.active {
+  background-color: #fff;
+  color: var(--clr-primary);
+}
+.sidebar ul li a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  padding: 0 2rem;
+  transition: all 0.3s;
+}

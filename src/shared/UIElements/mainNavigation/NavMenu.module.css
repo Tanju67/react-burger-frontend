@@ -13,3 +13,7 @@
 .menu li a:hover {
   color: #fff;
 }
+
+.menu li .loginBtn {
+  color: #fff;
+}

@@ -1,0 +1,82 @@
+.grid {
+  width: 32%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: var(--clr-primary-light);
+  color: var(--clr-primary-shade);
+}
+
+.grid span {
+  border: 2px solid var(--clr-primary);
+  padding: 3px;
+  margin-top: 1rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.grid h2 {
+  margin-bottom: 1rem;
+}
+
+.grid .btnBox {
+  background-color: #fff;
+  display: flex;
+  padding: 3px;
+  gap: 3px;
+}
+
+.grid .btnBox em {
+  flex: 1;
+  text-align: center;
+  background-color: rgba(242, 109, 124, 0.75);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s;
+}
+
+.grid .btnBox em:hover {
+  background-color: #fff;
+  color: var(--clr-primary-shade);
+}
+
+.list {
+  display: flex;
+  color: var(--clr-primary-shade);
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--clr-primary-light);
+  margin-bottom: 5px;
+  padding: 5px 1rem;
+  font-size: 1.4rem;
+}
+
+.list h2 {
+  font-size: 1.6rem;
+}
+
+.list .btnBox {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.list .btnBox span {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.list .btnBox span:hover {
+  background-color: var(--clr-primary);
+  color: #fff;
+}

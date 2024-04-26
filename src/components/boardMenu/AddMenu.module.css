@@ -1,0 +1,26 @@
+.content {
+  padding: 2rem;
+}
+
+.formCard {
+  width: 50%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--clr-primary-light);
+  color: var(--clr-primary-shade);
+}
+
+.formCard form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formCard form input {
+  background-color: #fff;
+}
+
+.formCard h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--clr-primary-shade);
+}

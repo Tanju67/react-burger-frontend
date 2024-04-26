@@ -10,13 +10,18 @@ function NavMenu() {
         <NavLink to={"menu"}>Menu</NavLink>
       </li>
       <li>
-        <NavLink>My Order</NavLink>
+        <NavLink to={"order-history"}>My Order</NavLink>
       </li>
       <li>
-        <NavLink>Admin Dashboard</NavLink>
+        <NavLink to={"dashboard"}>Admin Dashboard</NavLink>
       </li>
       <li>
-        <Button size={"sm"} rounded={true}>
+        <Button
+          className={styles.loginBtn}
+          to={"login"}
+          size={"sm"}
+          rounded={true}
+        >
           Login
         </Button>
       </li>

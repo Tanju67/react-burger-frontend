@@ -1,0 +1,83 @@
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px;
+  color: var(--clr-primary-shade);
+  font-weight: bold;
+}
+
+.item:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+.contentBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.contentBox img {
+  height: 5rem;
+}
+
+.contentBox span {
+  text-transform: capitalize;
+}
+
+.actionBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.actionBox span {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+}
+
+.actionBox span:hover {
+  background-color: var(--clr-primary);
+  color: #fff;
+}
+.view {
+  position: relative;
+  width: 24%;
+  padding: 0;
+}
+
+.view .contentBox {
+  width: 100%;
+}
+
+.view img {
+  min-width: 100%;
+  height: 15rem;
+  object-fit: cover;
+}
+
+.view .actionBox {
+  position: absolute;
+  gap: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(242, 109, 124, 0.75);
+  color: #fff;
+}
+
+.view .contentBox span {
+  position: absolute;
+  color: #fff;
+  background-color: rgba(242, 109, 124, 0.75);
+
+  bottom: 0;
+  left: 0;
+  text-align: center;
+}

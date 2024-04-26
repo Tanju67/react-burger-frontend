@@ -1,0 +1,58 @@
+.content {
+  padding: 1rem;
+}
+.nav {
+  background-color: var(--clr-primary-light);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--clr-primary-shade);
+  gap: 1rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.nav a {
+  display: flex;
+  color: var(--clr-primary-shade);
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.options span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 5px;
+}
+
+.options span.active {
+  color: #fff;
+  background-color: var(--clr-primary);
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.content ul {
+  margin-top: 1rem;
+  overflow-y: scroll;
+  height: 73vh;
+  padding: 1rem;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
