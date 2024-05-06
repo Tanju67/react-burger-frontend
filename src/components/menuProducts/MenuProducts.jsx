@@ -1,74 +1,18 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useState } from "react";
 import styles from "./MenuProducts.module.css";
-import MenuNav from "../../shared/UIElements/MenuNav";
 import { IoArrowBackOutline, IoGrid } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { FaListUl } from "react-icons/fa6";
 import Button from "../../shared/UIElements/Button";
 import Item from "./Item";
 import AddProduct from "./AddProduct";
+import UpdateProduct from "./UpdateProduct";
 
-const products = [
-  {
-    id: "p1",
-    title: "Monster Burger",
-    description:
-      "this is awesome burger.You can eat it everytime. we suggest it mit fresh onion.",
-    price: 9.9,
-    menuTitle: "burger",
-  },
-  {
-    id: "p2",
-    title: "Monster Burger",
-    description:
-      "this is awesome burger.You can eat it everytime. we suggest it mit fresh onion.",
-    price: 9.9,
-    menuTitle: "burger",
-  },
-  {
-    id: "p3",
-    title: "Monster Burger",
-    description:
-      "this is awesome burger.You can eat it everytime. we suggest it mit fresh onion.",
-    price: 9.9,
-    menuTitle: "burger",
-  },
-  {
-    id: "p4",
-    title: "Monster Burger",
-    description:
-      "this is awesome burger.You can eat it everytime. we suggest it mit fresh onion.",
-    price: 9.9,
-    menuTitle: "burger",
-  },
-  {
-    id: "p5",
-    title: "Monster Burger",
-    description:
-      "this is awesome burger.You can eat it everytime. we suggest it mit fresh onion.",
-    price: 9.9,
-    menuTitle: "burger",
-  },
-  {
-    id: "p6",
-    title: "Monster Burger",
-    description:
-      "this is awesome burger.You can eat it everytime. we suggest it mit fresh onion.",
-    price: 9.9,
-    menuTitle: "burger",
-  },
-  {
-    id: "p7",
-    title: "Monster Burger",
-    description:
-      "this is awesome burger.You can eat it everytime. we suggest it mit fresh onion.",
-    price: 9.9,
-    menuTitle: "burger",
-  },
-];
-
-function MenuProducts() {
+function MenuProducts({ data }) {
+  const [searchParams] = useSearchParams();
   const [showForm, setShowForm] = useState(false);
+  const [showUpdateForm, setShowUpdateForm] = useState(false);
   const [viewIndex, setViewIndex] = useState(1);
   return (
     <div className={styles.content}>
@@ -77,49 +21,76 @@ function MenuProducts() {
           <Link to={".."}>
             <IoArrowBackOutline />
           </Link>
-          <span>{products[0].menuTitle}</span>
+          <span>{searchParams.get("title")}</span>
         </div>
         <div className={styles.options}>
-          {!showForm && (
+          {!showForm && !showUpdateForm && (
             <>
               <span
                 onClick={() => setViewIndex(1)}
-                className={`${viewIndex === 1 ? styles.active : ""}`}
+                className={`${viewIndex === 1 ? styles.active : ""} ${
+                  styles.navList
+                }`}
               >
                 <IoGrid />
                 Grid
               </span>
               <span
                 onClick={() => setViewIndex(2)}
-                className={`${viewIndex === 2 ? styles.active : ""}`}
+                className={`${viewIndex === 2 ? styles.active : ""} ${
+                  styles.navList
+                }`}
               >
                 <FaListUl />
                 List
               </span>
             </>
           )}
-          <Button
-            onClick={() => setShowForm((prev) => !prev)}
-            size={"sm"}
-            rounded={true}
-          >
-            {showForm ? "< Back" : "+ Add Product"}
-          </Button>
+          {!showUpdateForm && (
+            <Button
+              onClick={() => setShowForm((prev) => !prev)}
+              size={"sm"}
+              rounded={true}
+            >
+              {showForm ? "< Back" : "+ Add Product"}
+            </Button>
+          )}
+          {showUpdateForm && (
+            <Button
+              onClick={() => setShowUpdateForm(false)}
+              size={"sm"}
+              rounded={true}
+            >
+              {"<"} Back
+            </Button>
+          )}
         </div>
       </div>
-      {!showForm && (
+      {!showForm && !showUpdateForm && data.length > 0 && (
         <ul
           className={`${viewIndex === 1 ? styles.grid : ""} ${
             viewIndex === 2 ? styles.list : ""
           }`}
         >
-          {products.map((item) => (
-            <Item key={item.id} item={item} viewIndex={viewIndex} />
+          {data.map((item) => (
+            <Item
+              key={item._id}
+              item={item}
+              viewIndex={viewIndex}
+              setShowUpdateForm={setShowUpdateForm}
+            />
           ))}
         </ul>
       )}
 
+      {data.length === 0 && (
+        <p className={styles.msg}>
+          There is no product yet! Please add a product.
+        </p>
+      )}
+
       {showForm && <AddProduct />}
+      {showUpdateForm && <UpdateProduct />}
     </div>
   );
 }

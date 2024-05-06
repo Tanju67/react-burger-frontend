@@ -1,0 +1,37 @@
+.nav {
+  background-color: var(--clr-primary-light);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav span {
+  color: var(--clr-primary-shade);
+  font-weight: bold;
+}
+
+.options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.options span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  padding: 2px 5px;
+}
+
+.options span.active {
+  color: #fff;
+  background-color: var(--clr-primary);
+}
+
+@media only screen and (max-width: 700px) {
+  .options .navGrid {
+    display: none;
+  }
+}

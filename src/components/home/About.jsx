@@ -1,12 +1,11 @@
-import React from "react";
-import styles from "./About.module.css";
+import { IoOptionsOutline } from "react-icons/io5";
+import { MdShoppingCart } from "react-icons/md";
+import { IoTimerOutline } from "react-icons/io5";
 import SectionLayout from "../../shared/UIElements/SectionLayout";
 import img1 from "../../assets/organic-shape-01.svg";
 import img2 from "../../assets/organic-shape-02.svg";
 import img3 from "../../assets/organic-shape-03.svg";
-import { IoOptionsOutline } from "react-icons/io5";
-import { MdShoppingCart } from "react-icons/md";
-import { IoTimerOutline } from "react-icons/io5";
+import styles from "./About.module.css";
 
 function About() {
   return (

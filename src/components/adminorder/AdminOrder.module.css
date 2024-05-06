@@ -1,0 +1,32 @@
+.page {
+  padding: 1rem;
+}
+
+.nav {
+  background-color: var(--clr-primary-light);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--clr-primary-shade);
+  gap: 1rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu a {
+  color: var(--clr-primary-shade);
+  padding: 0 1rem;
+}
+
+.menu .active {
+  background-color: var(--clr-primary);
+  color: #fff;
+}

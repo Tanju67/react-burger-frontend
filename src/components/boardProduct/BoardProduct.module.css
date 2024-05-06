@@ -17,8 +17,14 @@
 .board ul {
   display: flex;
   flex-wrap: wrap;
-  height: 73vh;
+  max-height: 73vh;
   overflow-y: scroll;
   margin-top: 1rem;
   gap: 1rem;
+}
+
+@media only screen and (max-width: 550px) {
+  .board {
+    min-height: 73vh;
+  }
 }

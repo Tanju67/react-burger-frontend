@@ -1,0 +1,12 @@
+.page {
+  background-color: #fff;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.page ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}

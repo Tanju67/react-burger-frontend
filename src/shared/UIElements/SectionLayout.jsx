@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import styles from "./SectionLayout.module.css";
 import Reveal from "./Reveal";
 import Logo from "./Logo";

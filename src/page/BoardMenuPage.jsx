@@ -1,8 +1,7 @@
-import React from "react";
-import BoardMenu from "../components/boardMenu/BoardMenu";
+import BoardMenuData from "../components/boardMenu/BoardMenuData";
 
 function BoardMenuPage() {
-  return <BoardMenu />;
+  return <BoardMenuData />;
 }
 
 export default BoardMenuPage;

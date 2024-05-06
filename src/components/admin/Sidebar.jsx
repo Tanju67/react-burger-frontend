@@ -1,10 +1,9 @@
-import React from "react";
-import styles from "./Sidebar.module.css";
-import Logo from "../../shared/UIElements/Logo";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { MdMenuBook } from "react-icons/md";
 import { FaProductHunt } from "react-icons/fa";
 import { MdOutlineBorderColor } from "react-icons/md";
+import styles from "./Sidebar.module.css";
+import Logo from "../../shared/UIElements/Logo";
 
 function Sidebar() {
   return (
@@ -24,7 +23,6 @@ function Sidebar() {
           <NavLink
             to={"products"}
             className={({ isActive }) => (isActive ? styles.active : "")}
-            end
           >
             <FaProductHunt />
             <span>Products</span>
@@ -34,7 +32,6 @@ function Sidebar() {
           <NavLink
             to={"orders"}
             className={({ isActive }) => (isActive ? styles.active : "")}
-            end
           >
             <MdOutlineBorderColor />
             <span>Orders</span>

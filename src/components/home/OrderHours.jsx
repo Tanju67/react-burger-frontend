@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./OrderHours.module.css";
 import SectionLayout from "../../shared/UIElements/SectionLayout";
 import Card from "../../shared/UIElements/Card";

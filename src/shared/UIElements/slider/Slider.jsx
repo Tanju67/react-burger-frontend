@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import { Navigation, Pagination, EffectCoverflow } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -38,7 +38,7 @@ function Slider({ list }) {
       >
         {list.map((item, i) => (
           <SwiperSlide key={i}>
-            <SliderItem image={item.image} title={item.title} />
+            <SliderItem image={item.image} title={item.title} id={item._id} />
           </SwiperSlide>
         ))}
         <div className="slider-controller">

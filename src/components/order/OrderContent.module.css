@@ -6,6 +6,7 @@
   background-color: #fff;
   width: 60%;
   padding: 2rem 1rem;
+  position: relative;
 }
 
 .contentCard p {
@@ -16,4 +17,10 @@
   width: 100%;
   margin-top: 3rem;
   border-radius: 1rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .contentCard {
+    width: 100%;
+  }
 }

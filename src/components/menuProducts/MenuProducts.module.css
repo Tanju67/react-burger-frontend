@@ -56,3 +56,21 @@
   flex-wrap: wrap;
   gap: 1rem;
 }
+
+.msg {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--clr-primary-shade);
+}
+
+@media only screen and (max-width: 700px) {
+  .options .navList {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .content {
+    min-height: 100vh;
+  }
+}

@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/prop-types */
 import styles from "./Card.module.css";
 
 function Card({ className, children }) {

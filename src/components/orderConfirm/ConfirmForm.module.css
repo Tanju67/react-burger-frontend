@@ -3,9 +3,21 @@
   padding-right: 1rem;
 }
 
+.error {
+  background-color: var(--clr-primary-light);
+  width: 40%;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  color: red;
+  text-align: center;
+}
+
+.content {
+}
+
 .content form {
   border-radius: 1rem;
-  background-color: #fff;
+  background-color: var(--clr-primary-light);
   padding: 1rem;
 }
 
@@ -16,4 +28,11 @@
 .orderBtn {
   width: 100%;
   margin: 2rem 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    width: 100%;
+    padding-right: 0;
+  }
 }

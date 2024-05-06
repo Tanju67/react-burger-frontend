@@ -2,8 +2,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 8rem;
   gap: 8rem;
+  max-width: 124rem;
+  margin: 8rem auto;
 }
 
 .content li {
@@ -31,4 +32,10 @@
   transform: translate(-50%, -50%);
   color: #fff;
   font-size: 5rem;
+}
+
+@media only screen and (max-width: 750px) {
+  .content {
+    flex-direction: column;
+  }
 }

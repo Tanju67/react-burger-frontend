@@ -1,0 +1,8 @@
+.item {
+  width: 100%;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+}

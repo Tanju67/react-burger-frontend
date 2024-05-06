@@ -1,6 +1,5 @@
-import React from "react";
-import styles from "./Error.module.css";
 import { useRouteError } from "react-router-dom";
+import styles from "./Error.module.css";
 import MainNavigation from "../../shared/UIElements/mainNavigation/MainNavigation";
 
 function Error() {

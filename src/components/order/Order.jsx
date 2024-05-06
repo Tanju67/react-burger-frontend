@@ -1,19 +1,13 @@
-import React from "react";
-import styles from "./Order.module.css";
+/* eslint-disable react/prop-types */
 import MenuLayout from "../../shared/UIElements/MenuLayout";
 import OrderContent from "./OrderContent";
+import { useSelector } from "react-redux";
 
-const product = {
-  id: "p7",
-  title: "Monster Burger",
-  price: 14.5,
-  description: "Tripple Burger with salad, onion, 3x cheddar and tomatio",
-};
-
-function Order() {
+function Order({ data }) {
+  const role = useSelector((state) => state.auth.user.role);
   return (
-    <MenuLayout title={product.title}>
-      <OrderContent product={product} />
+    <MenuLayout title={data[0].title} orderBtn={role !== "admin"}>
+      <OrderContent data={data} />
     </MenuLayout>
   );
 }

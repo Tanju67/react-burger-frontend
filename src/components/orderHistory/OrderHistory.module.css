@@ -1,0 +1,16 @@
+.navTab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.navTab a {
+  color: var(--clr-primary-shade);
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+}
+
+.active {
+  background-color: #fff;
+}

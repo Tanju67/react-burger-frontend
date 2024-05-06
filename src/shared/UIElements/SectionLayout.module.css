@@ -14,3 +14,9 @@
   color: var(--clr-primary);
   font-size: 3rem;
 }
+
+@media only screen and (max-width: 550px) {
+  .section {
+    padding: 6rem 1rem;
+  }
+}

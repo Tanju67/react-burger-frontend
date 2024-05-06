@@ -1,19 +1,47 @@
-import React from "react";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import styles from "./ConfirmForm.module.css";
 import Input from "../../shared/formElements/Input";
-import {
-  VALIDATOR_EMAIL,
-  VALIDATOR_REQUIRE,
-} from "../../shared/utils/validator";
+import { VALIDATOR_REQUIRE } from "../../shared/utils/validator";
 import { useForm } from "../../shared/hooks/useForm";
 import Button from "../../shared/UIElements/Button";
+import { useHttpRequest } from "../../shared/hooks/send-request";
+import Spinner from "../../shared/UIElements/Spinner";
 
 function ConfirmForm() {
   const [inputHandler, formState] = useForm();
-  console.log(formState);
+  const { sendRequest, isLoading, error } = useHttpRequest();
+  const cart = useSelector((state) => state.cart.cart);
+  const navigate = useNavigate();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const token = localStorage.getItem("token");
+    const newOrder = {
+      name: formState.name.value,
+      phone: formState.phone.value,
+      street: formState.street.value,
+      houseNumber: formState.house.value,
+      orderItems: cart,
+    };
+    sendRequest(
+      "http://localhost:5000/api/v1/order",
+      "POST",
+      undefined,
+      newOrder,
+      {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      () => {
+        navigate("/order-history");
+      }
+    );
+  };
   return (
     <div className={styles.content}>
-      <form>
+      <form onSubmit={submitHandler}>
+        {isLoading && <Spinner />}
         <h2>Please enter your address</h2>
         <Input
           id="name"
@@ -58,25 +86,16 @@ function ConfirmForm() {
           />
         </div>
 
-        <Input
-          id="email"
-          element="input"
-          type="email"
-          label="Email"
-          placeholder="Email"
-          errorMsg="Please enter a valid email!"
-          onInput={inputHandler}
-          validators={[VALIDATOR_REQUIRE(), VALIDATOR_EMAIL()]}
-        />
         <Button
           className={styles.orderBtn}
           size={"md"}
-          disabled={!formState?.isValid}
+          disabled={!formState?.isValid || cart.length === 0}
           type={"submit"}
         >
           Confirm your order
         </Button>
       </form>
+      {!isLoading && error && <p className={styles.error}>{error}</p>}
     </div>
   );
 }

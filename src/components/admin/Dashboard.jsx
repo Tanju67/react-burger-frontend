@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Dashboard.module.css";
 import Sidebar from "./Sidebar";
 import Board from "./Board";

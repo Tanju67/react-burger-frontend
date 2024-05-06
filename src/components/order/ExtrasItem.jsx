@@ -12,13 +12,13 @@ function ExtrasItem({ item }) {
     if (!checked) {
       dispatch(
         cartActions.setExtras({
-          id: item.id,
+          id: item._id,
           title: item.title,
           price: item.price,
         })
       );
     } else {
-      dispatch(cartActions.deleteExtras(item.id));
+      dispatch(cartActions.deleteExtras(item._id));
     }
   };
 

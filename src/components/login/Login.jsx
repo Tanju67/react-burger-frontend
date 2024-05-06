@@ -1,4 +1,4 @@
-import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import MenuLayout from "../../shared/UIElements/MenuLayout";
 import Input from "../../shared/formElements/Input";
@@ -6,20 +6,51 @@ import Card from "../../shared/UIElements/Card";
 import { useForm } from "../../shared/hooks/useForm";
 import {
   VALIDATOR_EMAIL,
-  VALIDATOR_MIN,
+  VALIDATOR_MINLENGTH,
   VALIDATOR_REQUIRE,
 } from "../../shared/utils/validator";
 import Button from "../../shared/UIElements/Button";
-import { Link } from "react-router-dom";
+import { useHttpRequest } from "../../shared/hooks/send-request";
+import { useDispatch } from "react-redux";
+import { authActions } from "../../shared/store/auth-slice";
+import Spinner from "../../shared/UIElements/Spinner";
 
 function Login() {
-  const [inputHandler, formState] = useForm();
+  const [inputHandler, formState] = useForm({
+    email: { value: "", isValid: false },
+    password: { value: "", isValid: false },
+    isValid: false,
+  });
+
+  const { sendRequest, isLoading, error } = useHttpRequest();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    sendRequest(
+      "http://localhost:5000/api/v1/auth/login",
+      "POST",
+      undefined,
+      { email: formState.email.value, password: formState.password.value },
+      {
+        "Content-Type": "application/json",
+      },
+      (data) => {
+        const user = { id: data.id, name: data.name, role: data.role };
+        const token = data.token;
+        dispatch(authActions.onLogin({ user, token }));
+        navigate("/");
+      }
+    );
+  };
   return (
     <MenuLayout title={"Login"} sidebar={false}>
       <div className={styles.content}>
         <Card className={styles.formCard}>
+          {isLoading && !error && <Spinner />}
           <h2>Login</h2>
-          <form>
+          <form onSubmit={submitHandler}>
             <Input
               id="email"
               element="input"
@@ -38,7 +69,7 @@ function Login() {
               placeholder="Password"
               errorMsg="Please enter a password!"
               onInput={inputHandler}
-              validators={[VALIDATOR_REQUIRE(), VALIDATOR_MIN(6)]}
+              validators={[VALIDATOR_MINLENGTH(6)]}
             />
 
             <Button disabled={!formState?.isValid} size={"md"}>
@@ -50,6 +81,7 @@ function Login() {
             </p>
           </form>
         </Card>
+        {!isLoading && error && <p className={styles.error}>{error}</p>}
       </div>
     </MenuLayout>
   );

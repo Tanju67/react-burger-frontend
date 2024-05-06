@@ -1,8 +1,7 @@
-import React from "react";
-import BoardProduct from "../components/boardProduct/BoardProduct";
+import BoardProductData from "../components/boardProduct/BoardProductData";
 
 function BoardProductPage() {
-  return <BoardProduct />;
+  return <BoardProductData />;
 }
 
 export default BoardProductPage;

@@ -13,6 +13,19 @@
 .clsBtn {
   font-size: 3rem;
   color: var(--clr-primary);
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.clsBtn:hover {
+  background-color: var(--clr-primary);
+  color: #fff;
 }
 
 .item strong {

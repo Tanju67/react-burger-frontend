@@ -1,6 +1,5 @@
-import React from "react";
-import styles from "./Board.module.css";
 import { Outlet } from "react-router-dom";
+import styles from "./Board.module.css";
 
 function Board() {
   return (

@@ -1,4 +1,5 @@
-import React, { useEffect, useReducer } from "react";
+/* eslint-disable react/prop-types */
+import { useEffect, useReducer } from "react";
 import styles from "./Input.module.css";
 import { validate } from "../utils/validator";
 

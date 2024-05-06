@@ -4,10 +4,12 @@
 }
 
 .container {
-  padding: 4rem 20rem;
+  padding: 4rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
+  max-width: 124rem;
+  margin: 0 auto;
 }
 
 .footer p {
@@ -23,14 +25,7 @@
   }
 }
 
-@media only screen and (max-width: 700px) {
-  .container {
-    justify-content: space-between;
-    padding: 4rem;
-  }
-}
-
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 750px) {
   .container {
     flex-direction: column;
     gap: 4rem;

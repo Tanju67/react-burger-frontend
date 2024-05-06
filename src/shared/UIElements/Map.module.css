@@ -54,3 +54,16 @@
 .mapBtn:hover {
   background-color: var(--clr-secondary-tint);
 }
+
+@media only screen and (max-width: 500px) {
+  .mapContainer {
+    flex: 2;
+    background-color: var(--clr-primary);
+    height: 50rem;
+    position: relative;
+  }
+
+  .map {
+    height: 100%;
+  }
+}

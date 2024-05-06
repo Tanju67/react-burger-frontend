@@ -1,26 +1,32 @@
-import React from "react";
-import styles from "./Extras.module.css";
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
 import ExtrasItem from "./ExtrasItem";
+import { useHttpRequest } from "../../shared/hooks/send-request";
+import Spinner from "../../shared/UIElements/Spinner";
 
-const extras = [
-  { id: "e1", title: "cheddar", price: 0.5 },
-  { id: "e2", title: "basilikum", price: 0.5 },
-  { id: "e3", title: "domates", price: 0.5 },
-  { id: "e4", title: "salatalik", price: 0.5 },
-  { id: "e5", title: "yumurta", price: 0.5 },
-  { id: "e6", title: "cheddar", price: 0.5 },
-  { id: "e7", title: "cheddar", price: 0.5 },
-  { id: "e8", title: "cheddar", price: 0.5 },
-  { id: "e9", title: "cheddar", price: 0.5 },
-  { id: "e10", title: "cheddar", price: 0.5 },
-];
-
-function Extras({ title }) {
+function Extras({ title, query }) {
+  const [data, setData] = useState([]);
+  const { sendRequest, isLoading } = useHttpRequest();
+  useEffect(() => {
+    sendRequest(
+      `http://localhost:5000/api/v1/admin/extra?title=${query}`,
+      "GET",
+      undefined,
+      undefined,
+      {
+        "Content-Type": "application/json",
+      },
+      (data) => {
+        setData(data);
+      }
+    );
+  }, []);
   return (
     <div>
+      {isLoading && <Spinner />}
       <h3>{title}</h3>
-      {extras.map((item) => (
-        <ExtrasItem key={item.id} item={item} />
+      {data.map((item) => (
+        <ExtrasItem key={item._id} item={item} />
       ))}
     </div>
   );

@@ -5,6 +5,11 @@
   border-radius: 5px;
   background-color: var(--clr-primary-light);
   color: var(--clr-primary-shade);
+  /* align-self: flex-start; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
 }
 
 .grid span {
@@ -46,23 +51,35 @@
 .list {
   display: flex;
   color: var(--clr-primary-shade);
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
   background-color: var(--clr-primary-light);
   margin-bottom: 5px;
   padding: 5px 1rem;
   font-size: 1.4rem;
+  justify-content: space-between;
+}
+
+.list .box {
+  display: flex;
 }
 
 .list h2 {
   font-size: 1.6rem;
+  width: 15rem;
+}
+
+.list p {
+  flex: 1;
+  padding: 0 3rem;
 }
 
 .list .btnBox {
   display: flex;
   gap: 1rem;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
+  width: 7rem;
 }
 
 .list .btnBox span {
@@ -79,4 +96,16 @@
 .list .btnBox span:hover {
   background-color: var(--clr-primary);
   color: #fff;
+}
+
+@media only screen and (max-width: 1000px) {
+  .grid {
+    width: 48%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .grid {
+    width: 100%;
+  }
 }

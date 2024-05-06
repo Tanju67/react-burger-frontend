@@ -112,6 +112,12 @@ a {
   transform: translateX(-58%) !important;
 }
 
+.spinner-box {
+  position: relative;
+  height: 100vh;
+  background-color: #ddd;
+}
+
 @media (max-width: 990px) {
   .slider-controler .swiper-button-next {
     left: 70% !important;

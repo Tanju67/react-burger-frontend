@@ -1,0 +1,31 @@
+.page {
+  margin-top: 1rem;
+}
+
+.page ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  overflow-y: scroll;
+  max-height: 73vh;
+  margin-top: 1rem;
+}
+
+.page ul h3 {
+  text-align: center;
+  color: var(--clr-primary-shade);
+  margin-top: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .page ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .page {
+    min-height: 80vh;
+  }
+}

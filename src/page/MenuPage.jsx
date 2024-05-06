@@ -1,8 +1,23 @@
-import React from "react";
-import Menu from "../components/menu/Menu";
+/* eslint-disable react-refresh/only-export-components */
+import { defer } from "react-router-dom";
+import { loaderRequest } from "../shared/utils/loaderRequest";
+import MenuData from "../components/menu/MenuData";
 
 function MenuPage() {
-  return <Menu />;
+  return <MenuData />;
 }
 
 export default MenuPage;
+
+async function loadMenu() {
+  const token = localStorage.getItem("token");
+  return loaderRequest(`http://localhost:5000/api/v1/admin`, true, {
+    Authorization: `Bearer ${token}`,
+  });
+}
+
+export async function loader() {
+  return defer({
+    data: loadMenu(),
+  });
+}

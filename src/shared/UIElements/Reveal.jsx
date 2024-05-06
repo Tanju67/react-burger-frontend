@@ -1,12 +1,11 @@
-import React, { useEffect, useRef } from "react";
+/* eslint-disable react/prop-types */
+import { useEffect, useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import styles from "./Reveal.module.css";
 
-function Reveal({ children, width = "fit-content" | "100%", className }) {
+function Reveal({ children, className }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
   const mainControls = useAnimation();
-  const divStyle = { position: "relative", width, overflow: "hidden" };
 
   useEffect(() => {
     if (isInView) {

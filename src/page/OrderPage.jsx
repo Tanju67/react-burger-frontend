@@ -1,8 +1,27 @@
-import React from "react";
-import Order from "../components/order/Order";
+/* eslint-disable react-refresh/only-export-components */
+import { defer } from "react-router-dom";
+import { loaderRequest } from "../shared/utils/loaderRequest";
+import OrderData from "../components/order/OrderData";
 
 function OrderPage() {
-  return <Order />;
+  return <OrderData />;
 }
 
 export default OrderPage;
+
+async function loadSingleProduct(id) {
+  return loaderRequest(
+    `http://localhost:5000/api/v1/productAdmin/${id}`,
+    true,
+    {
+      "Content-Type": "application/json",
+    }
+  );
+}
+
+export async function loader({ params }) {
+  const id = params.id;
+  return defer({
+    data: loadSingleProduct(id),
+  });
+}
