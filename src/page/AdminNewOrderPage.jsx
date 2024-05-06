@@ -12,7 +12,7 @@ export default AdminNewOrderPage;
 async function loadNewOrder() {
   const token = localStorage.getItem("token");
   return loaderRequest(
-    `http://localhost:5000/api/v1/order/admin/activeOrders`,
+    import.meta.env.VITE_BACKEND_URL + `/api/v1/order/admin/activeOrders`,
     true,
     {
       "Content-Type": "application/json",

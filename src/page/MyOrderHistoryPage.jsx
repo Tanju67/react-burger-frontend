@@ -11,10 +11,14 @@ export default MyOrderHistoryPage;
 
 async function loadHistoryOrder() {
   const token = localStorage.getItem("token");
-  return loaderRequest(`http://localhost:5000/api/v1/order/history`, true, {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
-  });
+  return loaderRequest(
+    import.meta.env.VITE_BACKEND_URL + `/api/v1/order/history`,
+    true,
+    {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    }
+  );
 }
 
 export async function loader() {

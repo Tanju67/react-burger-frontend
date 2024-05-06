@@ -23,7 +23,7 @@ function MenuCart({ orderBtn = true, confirm = false }) {
   useEffect(() => {
     const token = localStorage.getItem("token");
     sendRequest(
-      `http://localhost:5000/api/v1/cart`,
+      import.meta.env.VITE_BACKEND_URL + `/api/v1/cart`,
       "GET",
       undefined,
       undefined,

@@ -11,7 +11,7 @@ export default MenuDetailPage;
 
 async function loadMenuPruducts(id) {
   return loaderRequest(
-    `http://localhost:5000/api/v1/productAdmin/menu/${id}`,
+    import.meta.env.VITE_BACKEND_URL + `/api/v1/productAdmin/menu/${id}`,
     true,
     {
       "Content-Type": "application/json",

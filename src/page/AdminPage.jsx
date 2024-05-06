@@ -10,9 +10,13 @@ function AdminPage() {
 export default AdminPage;
 
 async function loadMenu() {
-  return loaderRequest(`http://localhost:5000/api/v1/admin`, true, {
-    "Content-Type": "application/json",
-  });
+  return loaderRequest(
+    import.meta.env.VITE_BACKEND_URL + `/api/v1/admin`,
+    true,
+    {
+      "Content-Type": "application/json",
+    }
+  );
 }
 
 export async function loader() {

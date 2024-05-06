@@ -19,7 +19,8 @@ function OrderDetail({ data }) {
     const token = localStorage.getItem("token");
 
     sendRequest(
-      `http://localhost:5000/api/v1/order/admin/updateOrder/${data._id}`,
+      import.meta.env.VITE_BACKEND_URL +
+        `/api/v1/order/admin/updateOrder/${data._id}`,
       "PATCH",
       undefined,
       {

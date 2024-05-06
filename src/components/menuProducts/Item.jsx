@@ -13,7 +13,7 @@ function Item({ item, viewIndex, setShowUpdateForm }) {
   const deleteHandler = () => {
     const token = localStorage.getItem("token");
     sendRequest(
-      `http://localhost:5000/api/v1/productAdmin/${item._id}`,
+      import.meta.env.VITE_BACKEND_URL + `/api/v1/productAdmin/${item._id}`,
       "DELETE",
       undefined,
       undefined,

@@ -5,7 +5,7 @@ export const fetchCurrentUser = () => {
     const fetchData = async () => {
       const token = localStorage.getItem("token");
       const response = await fetch(
-        "http://localhost:5000/api/v1/auth/current",
+        import.meta.env.VITE_BACKEND_URL + "/api/v1/auth/current",
         {
           headers: {
             Authorization: `Bearer ${token}`,

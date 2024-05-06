@@ -34,7 +34,7 @@ function UpdateMenu() {
     const token = localStorage.getItem("token");
 
     sendRequest(
-      `http://localhost:5000/api/v1/admin/${id}`,
+      import.meta.env.VITE_BACKEND_URL + `/api/v1/admin/${id}`,
       "PATCH",
       undefined,
       formdata,

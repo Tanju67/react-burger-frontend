@@ -11,7 +11,7 @@ export default OrderPage;
 
 async function loadSingleProduct(id) {
   return loaderRequest(
-    `http://localhost:5000/api/v1/productAdmin/${id}`,
+    import.meta.env.VITE_BACKEND_URL + `/api/v1/productAdmin/${id}`,
     true,
     {
       "Content-Type": "application/json",

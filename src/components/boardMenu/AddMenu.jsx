@@ -32,7 +32,7 @@ function AddMenu() {
     const token = localStorage.getItem("token");
 
     sendRequest(
-      "http://localhost:5000/api/v1/admin",
+      import.meta.env.VITE_BACKEND_URL + "/api/v1/admin",
       "POST",
       undefined,
       formdata,

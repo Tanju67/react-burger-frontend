@@ -29,7 +29,7 @@ function Login() {
   const submitHandler = (e) => {
     e.preventDefault();
     sendRequest(
-      "http://localhost:5000/api/v1/auth/login",
+      import.meta.env.VITE_BACKEND_URL + "/api/v1/auth/login",
       "POST",
       undefined,
       { email: formState.email.value, password: formState.password.value },

@@ -9,7 +9,7 @@ function Extras({ title, query }) {
   const { sendRequest, isLoading } = useHttpRequest();
   useEffect(() => {
     sendRequest(
-      `http://localhost:5000/api/v1/admin/extra?title=${query}`,
+      import.meta.env.VITE_BACKEND_URL + `/api/v1/admin/extra?title=${query}`,
       "GET",
       undefined,
       undefined,

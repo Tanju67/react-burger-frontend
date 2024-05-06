@@ -11,10 +11,14 @@ export default MyCurrentOrderpage;
 
 async function loadCurrentOrder() {
   const token = localStorage.getItem("token");
-  return loaderRequest(`http://localhost:5000/api/v1/order/current`, true, {
-    "Content-Type": "application/json",
-    Authorization: `Bearer ${token}`,
-  });
+  return loaderRequest(
+    import.meta.env.VITE_BACKEND_URL + `/api/v1/order/current`,
+    true,
+    {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    }
+  );
 }
 
 export async function loader() {

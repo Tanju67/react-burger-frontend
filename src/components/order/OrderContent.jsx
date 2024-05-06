@@ -27,7 +27,7 @@ function OrderContent({ data }) {
     e.preventDefault();
     const token = localStorage.getItem("token");
     sendRequest(
-      `http://localhost:5000/api/v1/cart`,
+      import.meta.env.VITE_BACKEND_URL + `/api/v1/cart`,
       "POST",
       undefined,
       product,

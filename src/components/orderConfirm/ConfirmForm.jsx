@@ -25,7 +25,7 @@ function ConfirmForm() {
       orderItems: cart,
     };
     sendRequest(
-      "http://localhost:5000/api/v1/order",
+      import.meta.env.VITE_BACKEND_URL + "/api/v1/order",
       "POST",
       undefined,
       newOrder,

@@ -12,7 +12,7 @@ function CartItem({ item }) {
   const clickHandler = () => {
     const token = localStorage.getItem("token");
     sendRequest(
-      `http://localhost:5000/api/v1/cart/${item._id}`,
+      import.meta.env.VITE_BACKEND_URL + `/api/v1/cart/${item._id}`,
       "DELETE",
       undefined,
       undefined,

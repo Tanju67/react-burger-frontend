@@ -12,7 +12,7 @@ export default AdminTodayOrderPage;
 async function loadTodayOrder() {
   const token = localStorage.getItem("token");
   return loaderRequest(
-    `http://localhost:5000/api/v1/order/admin/todayOrders`,
+    import.meta.env.VITE_BACKEND_URL + `/api/v1/order/admin/todayOrders`,
     true,
     {
       "Content-Type": "application/json",

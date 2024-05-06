@@ -5,6 +5,7 @@ import Spinner from "../../shared/UIElements/Spinner";
 
 function HomeData() {
   const data = useLoaderData();
+  console.log(import.meta.env.VITE_BACKEND_URL);
   return (
     <Suspense fallback={<Spinner box={true} />}>
       <Await resolve={data.data}>
