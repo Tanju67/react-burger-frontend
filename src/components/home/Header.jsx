@@ -2,7 +2,7 @@ import styles from "./Header.module.css";
 import waveWhite from "../../assets/wave-static-01.svg";
 import waveBlue from "../../assets/wave-static-02.svg";
 import phone from "../../assets/iphonex-white.png";
-import screenImg from "../../assets/scrnli_5_4_2024_12-19-21 PM.png";
+import screenImg from "../../assets/scrnli_5_4_2024_12-19-21 PM.jpg";
 import Button from "../../shared/UIElements/Button";
 
 function Header() {
