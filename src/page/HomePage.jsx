@@ -1,10 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
 import { defer } from "react-router-dom";
 import { loaderRequest } from "../shared/utils/loaderRequest";
-import HomeData from "../components/home/HomeData";
+import Home from "../components/home/Home";
 
 function HomePage() {
-  return <HomeData />;
+  return <Home />;
 }
 
 export default HomePage;

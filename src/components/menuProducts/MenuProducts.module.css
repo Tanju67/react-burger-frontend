@@ -30,6 +30,7 @@
   align-items: center;
   gap: 5px;
   padding: 2px 5px;
+  cursor: pointer;
 }
 
 .options span.active {
