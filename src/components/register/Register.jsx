@@ -50,7 +50,7 @@ function Register() {
     );
   };
   return (
-    <MenuLayout title={"Register"} sidebar={false}>
+    <MenuLayout title={"Register"} sidebar={false} cart={false}>
       <div className={styles.content}>
         <Card className={styles.formCard}>
           {isLoading && !error && <Spinner />}

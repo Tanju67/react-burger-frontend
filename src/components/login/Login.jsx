@@ -45,7 +45,7 @@ function Login() {
     );
   };
   return (
-    <MenuLayout title={"Login"} sidebar={false}>
+    <MenuLayout title={"Login"} sidebar={false} cart={false}>
       <div className={styles.content}>
         <Card className={styles.formCard}>
           {isLoading && !error && <Spinner />}
